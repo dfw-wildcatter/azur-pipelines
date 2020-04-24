@@ -9,7 +9,7 @@ trigger:
 pool:
   vmImage: 'ubuntu-16.04'
   
-container: 'rocker/r-ver:3.6.1'  
+container: 'rocker/r-ver:3.6.1'
 
 steps:
 - script: Rscript -e 'R.version'
@@ -18,7 +18,7 @@ steps:
 - script: Rscript install-packages.R
   displayName: 'Install packages'
 
-- script: Rscript train-model.R
+- script: Rscript train-model-m5.R
   displayName: 'Train model'
   
 - publish: $(System.DefaultWorkingDirectory)/model.Rd
